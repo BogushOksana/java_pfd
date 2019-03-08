@@ -14,3 +14,8 @@ gradle-app.setting
 # gradle/wrapper/gradle-wrapper.properties
 .idea/workspace.xml
 sandbox/src/main/java/MyFirstProgram.java
+sandbox/out/production/classes/ru/stqa/pft/sandbox/Square.class
+sandbox/out/production/classes/ru/stqa/pft/sandbox/MyFirstProgram.class
+sandbox/out/production/classes/ru/stqa/pft/sandbox/Rectangle.class
+sandbox/out/production/classes/ru/stqa/pft/sandbox/MyFirstProgram.class
+sandbox/out/production/classes/ru/stqa/pft/sandbox/MyFirstProgram.class
