@@ -3,8 +3,8 @@ package ru.stqa.pft.sandbox;
 public class TwoPoints {
 
   public static void main(String args[]) {
-    Point p1 = new Point(5, 20);
-    Point p2 = new Point(8, 20);
+    Point p1 = new Point(5, 6);
+    Point p2 = new Point(8, 6);
 
 
     System.out.println("x = " + p1.x + " y = " + p1.y);
