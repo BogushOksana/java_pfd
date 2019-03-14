@@ -12,16 +12,16 @@ public class GroupCreationTests {
   public void setUp() throws Exception {
     vd = new FirefoxDriver();
     vd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-  }
-
-  @Test
-  public void testGroupCreation() throws Exception {
     vd.get("http://localhost/addressbook/");
     vd.findElement(By.name("user")).clear();
     vd.findElement(By.name("user")).sendKeys("admin");
     vd.findElement(By.name("pass")).clear();
     vd.findElement(By.name("pass")).sendKeys("secret");
     vd.findElement(By.xpath("//input[@value='Login']")).click();
+  }
+
+  @Test
+  public void testGroupCreation() throws Exception {
     vd.findElement(By.linkText("groups")).click();
     vd.findElement(By.name("new")).click();
     vd.findElement(By.name("group_name")).click();
