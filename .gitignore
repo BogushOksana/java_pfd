@@ -39,3 +39,16 @@ sandbox/out/production/classes/ru/stqa/pft/sandbox/Point.class
 sandbox/src/main/java/ru/stqa/pft/sandbox/TwoPoints.java
 sandbox/src/main/java/ru/stqa/pft/sandbox/TwoPoints.java
 sandbox/src/main/java/ru/stqa/pft/sandbox/TwoPoints.java
+
+
+sandbox/out/production/classes/ru/stqa/pft/sandbox/Equality.class
+sandbox/out/production/classes/ru/stqa/pft/sandbox/Equation.class
+sandbox/out/test/classes/ru/stqa/pft/sandbox/EquationTests.class
+sandbox/src/main/EquationTests.java
+sandbox/out/production/classes/ru/stqa/pft/sandbox/Equation.class
+sandbox/out/test/classes/ru/stqa/pft/sandbox/EquationTests.class
+sandbox/src/main/java/ru/stqa/pft/sandbox/Equality.java
+sandbox/src/main/java/ru/stqa/pft/sandbox/Equation.java
+sandbox/src/test/java/ru/stqa/pft/sandbox/EquationTests.java
+sandbox/out/test/classes/ru/stqa/pft/sandbox/EquationTests.class
+sandbox/out/production/classes/ru/stqa/pft/sandbox/Equation.class
