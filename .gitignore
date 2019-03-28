@@ -52,3 +52,6 @@ sandbox/src/main/java/ru/stqa/pft/sandbox/Equation.java
 sandbox/src/test/java/ru/stqa/pft/sandbox/EquationTests.java
 sandbox/out/test/classes/ru/stqa/pft/sandbox/EquationTests.class
 sandbox/out/production/classes/ru/stqa/pft/sandbox/Equation.class
+adressbook-web-tests/out/test/classes/ru/stqa/pft/adressbook/tests/TestBase.class
+adressbook-web-tests/out/test/classes/ru/stqa/pft/adressbook/tests/TestBase.class
+adressbook-web-tests/src/test/java/ru/stqa/pft/adressbook/tests/TestBase.java
