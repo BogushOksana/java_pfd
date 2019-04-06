@@ -12,8 +12,8 @@ public class ContactData {
   private String group;
 
 
-  public ContactData (String firstname, String lastname, String nickname, String mobile, String email, String group) {
-    this.id = 0;
+  public ContactData(String firstname, String lastname, String nickname, String mobile, String email, String group) {
+    this.id = Integer.MAX_VALUE;
     this.firstname = firstname;
     this.lastname = lastname;
     this.nickname = nickname;
@@ -21,6 +21,7 @@ public class ContactData {
     this.email = email;
     this.group = group;
   }
+
   public ContactData(int id, String firstname, String lastname, String nickname, String mobile, String email, String group) {
     this.id = id;
     this.firstname = firstname;
@@ -30,7 +31,6 @@ public class ContactData {
     this.email = email;
     this.group = group;
   }
-
 
 
   public String getFirstname() {
@@ -62,21 +62,8 @@ public class ContactData {
     return email;
   }
 
-  public String getGroup() { return group; }
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    ContactData that = (ContactData) o;
-    return id == that.id &&
-            Objects.equals(firstname, that.firstname) &&
-            Objects.equals(lastname, that.lastname);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(id, firstname, lastname);
+  public String getGroup() {
+    return group;
   }
 
   @Override
@@ -88,5 +75,18 @@ public class ContactData {
             '}';
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    ContactData that = (ContactData) o;
+    return Objects.equals(firstname, that.firstname) &&
+            Objects.equals(lastname, that.lastname);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(firstname, lastname);
+  }
 }
 
