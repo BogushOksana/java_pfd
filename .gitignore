@@ -57,3 +57,8 @@ adressbook-web-tests/out/test/classes/ru/stqa/pft/adressbook/tests/TestBase.clas
 adressbook-web-tests/src/test/java/ru/stqa/pft/adressbook/tests/TestBase.java
 adressbook-web-tests/src/test/java/ru/stqa/pft/adressbook/tests/GroupCreationTests.java
 adressbook-web-tests/src/test/java/ru/stqa/pft/adressbook/appmanager/GroupHelper.java
+adressbook-web-tests/src/test/java/ru/stqa/pft/adressbook/appmanager/GroupHelper.java
+adressbook-web-tests/out/test/classes/ru/stqa/pft/adressbook/appmanager/GroupHelper.class
+adressbook-web-tests/src/test/java/ru/stqa/pft/adressbook/appmanager/GroupHelper.java
+adressbook-web-tests/out/test/classes/ru/stqa/pft/adressbook/appmanager/GroupHelper.class
+adressbook-web-tests/src/test/java/ru/stqa/pft/adressbook/appmanager/GroupHelper.java
