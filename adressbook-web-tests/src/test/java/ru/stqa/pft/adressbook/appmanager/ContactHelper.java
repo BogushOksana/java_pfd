@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.adressbook.model.ContactData;
-import ru.stqa.pft.adressbook.model.GroupData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,7 +57,7 @@ public class ContactHelper extends HelperBase {
     click(By.linkText("home page"));
   }
 
-  public void create(ContactData contact, boolean b) {
+  public void create(ContactData contact) {
     initContactCreation();
     fillContactForm(contact, true);
     submitContactCreation();
@@ -90,11 +89,10 @@ public class ContactHelper extends HelperBase {
     List<WebElement> rows = wd.findElements(By.name("entry"));
     for (WebElement row : rows) {
       List<WebElement> cells = row.findElements(By.tagName("td"));
-      String lastname = cells.get(2).getText();
-      String firstname = cells.get(1).getText();
+      String lastname = cells.get(1).getText();
+      String firstname = cells.get(2).getText();
       int id = Integer.parseInt(cells.get(0).findElement(By.tagName("input")).getAttribute("value"));
-      ContactData contact = new ContactData(id, lastname, firstname);
-      contacts.add(contact);
+      contacts.add(new ContactData().withId(id).withFirstname(firstname).withLastname(lastname));
     }
     return contacts;
   }
