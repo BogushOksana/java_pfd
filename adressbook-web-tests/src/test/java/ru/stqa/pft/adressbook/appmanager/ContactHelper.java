@@ -7,8 +7,9 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.adressbook.model.ContactData;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ContactHelper extends HelperBase {
   public ContactHelper(WebDriver wd) {
@@ -45,8 +46,12 @@ public class ContactHelper extends HelperBase {
     wd.findElements(By.name("selected[]")).get(index).click();
   }
 
-  public void initContactModification(int index) {
-    wd.findElements(By.xpath("//img[@alt='Edit']")).get(index).click();
+  public void selectContactById(int id) {
+    wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
+  }
+
+  private void initContactModificationById(int id) {
+    wd.findElement(By.xpath("//a[@href='edit.php?id="+id+"']")).click();
   }
 
   public void submitContactModification() {
@@ -64,15 +69,15 @@ public class ContactHelper extends HelperBase {
     returnToContactPage();
   }
 
-  public void modify(int index, ContactData contact) {
-   initContactModification(index);
+  public void modify(ContactData contact) {
+   initContactModificationById(contact.getId());
    fillContactForm(contact, false);
    submitContactModification();
    returnToContactPage();
   }
 
-  public void delete(int index) {
-    selectContact(index);
+  public void delete(ContactData contact) {
+    selectContactById(contact.getId());
     delete();
   }
 
@@ -84,8 +89,8 @@ public class ContactHelper extends HelperBase {
     return wd.findElements(By.name("selected[]")).size();
   }
 
-  public List<ContactData> list() {
-    List<ContactData> contacts = new ArrayList<ContactData>();
+  public Set<ContactData> all() {
+    Set<ContactData> contacts = new HashSet<ContactData>();
     List<WebElement> rows = wd.findElements(By.name("entry"));
     for (WebElement row : rows) {
       List<WebElement> cells = row.findElements(By.tagName("td"));
@@ -96,5 +101,6 @@ public class ContactHelper extends HelperBase {
     }
     return contacts;
   }
+
 }
 

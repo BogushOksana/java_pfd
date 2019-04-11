@@ -44,11 +44,6 @@ public class ContactData {
     return this;
   }
 
-  public ContactData withGroup(String group) {
-    this.group = group;
-    return this;
-  }
-
   public int getId() {
     return id;
   }
@@ -87,13 +82,20 @@ public class ContactData {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     ContactData that = (ContactData) o;
-    return Objects.equals(firstname, that.firstname) &&
+    return id == that.id &&
+            Objects.equals(firstname, that.firstname) &&
             Objects.equals(lastname, that.lastname);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(firstname, lastname);
+    return Objects.hash(id, firstname, lastname);
   }
+
+  public ContactData withGroup(String group) {
+    this.group = group;
+    return this;
+  }
+
 }
 
