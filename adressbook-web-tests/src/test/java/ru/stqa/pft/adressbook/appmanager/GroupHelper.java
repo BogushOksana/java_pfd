@@ -55,7 +55,7 @@ public class GroupHelper extends HelperBase {
     initGroupCreation();
     fillGroupForm(group);
     submitGroupCreation();
-    returnToGroupPage(); //кэш сбрасывается, когда группа создана
+    groupCache = null; //кэш сбрасывается, когда группа создана
     returnToGroupPage();
   }
 
@@ -64,7 +64,7 @@ public class GroupHelper extends HelperBase {
     initGroupModification();
     fillGroupForm(group);
     submitGroupModification();
-    returnToGroupPage(); //кэш сбрасывается при модификации группы
+    groupCache = null; //кэш сбрасывается при модификации группы
     returnToGroupPage();
   }
 
@@ -79,7 +79,7 @@ public class GroupHelper extends HelperBase {
     return isElementPresent(By.name("selected[]"));
   }
 
-  public int getGroupCount() {
+  public int count() {
     return wd.findElements(By.name("selected[]")).size();
 
   }
