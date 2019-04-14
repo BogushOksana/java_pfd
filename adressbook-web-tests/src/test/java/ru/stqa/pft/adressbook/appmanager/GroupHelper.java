@@ -55,6 +55,7 @@ public class GroupHelper extends HelperBase {
     initGroupCreation();
     fillGroupForm(group);
     submitGroupCreation();
+    returnToGroupPage(); //кэш сбрасывается, когда группа создана
     returnToGroupPage();
   }
 
@@ -63,12 +64,14 @@ public class GroupHelper extends HelperBase {
     initGroupModification();
     fillGroupForm(group);
     submitGroupModification();
+    returnToGroupPage(); //кэш сбрасывается при модификации группы
     returnToGroupPage();
   }
 
   public void delete(GroupData group) {
     selectGroupById(group.getId());
     deleteSelectedGroups();
+    groupCache = null;//кэш сбрасывается, когда список групп поменялся
     returnToGroupPage();
   }
 
@@ -80,15 +83,22 @@ public class GroupHelper extends HelperBase {
     return wd.findElements(By.name("selected[]")).size();
 
   }
+
+  private Groups groupCache = null;//новое поле атрибут GroupHelper
+
   public Groups all() {
-    Groups groups = new Groups() ;
+    if (groupCache != null) { //если кэш не пустой
+      return new Groups(groupCache);//то, возвращаем копию кэш (копия возвращается на всяк. случай, чтобы кэш никто не испортил)
+    }
+//иначе (если кэш не заполнен, то читается список групп со страницв веб-приложения)
+    groupCache = new Groups(); //инициализируем групкэш
     List<WebElement> elements = wd.findElements(By.cssSelector("span.group"));
     for (WebElement element : elements) {
       String name = element.getText();
       int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-      groups.add(new GroupData().withId(id).withName(name));
+      groupCache.add(new GroupData().withId(id).withName(name)); //заполняем групкэш
     }
-    return groups;
+    return new Groups(groupCache); //возвращаем не сам кэш, а его копию
   }
 
 }
