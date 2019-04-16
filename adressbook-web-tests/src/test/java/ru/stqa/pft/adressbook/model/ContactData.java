@@ -3,12 +3,12 @@ package ru.stqa.pft.adressbook.model;
 import java.util.Objects;
 
 public class ContactData {
-  private int id = Integer.MAX_VALUE;
+  private int id = Integer.MAX_VALUE;;
   private String firstname;
   private String lastname;
   private String nickname;
-  private String home;
   private String mobile;
+  private String home;
   private String work;
   private String email;
   private String group;
@@ -16,70 +16,78 @@ public class ContactData {
   public ContactData() {
   }
 
-  public int getId() { return id; }
+  public String getFirstname() {
+    return firstname;
+  }
 
   public ContactData withId(int id) {
     this.id = id;
     return this;
   }
-
-  public String getFirstname() {
-    return firstname;
-  }
-
   public ContactData withFirstname(String firstname) {
     this.firstname = firstname;
     return this;
   }
-
-  public String getLastname() { return lastname; }
 
   public ContactData withLastname(String lastname) {
     this.lastname = lastname;
     return this;
   }
 
-  public String getNickname() { return nickname; }
-
   public ContactData withNickname(String nickname) {
     this.nickname = nickname;
     return this;
   }
-
-  public String getHomePhone() { return home; }
-
-  public ContactData withHomePhone(String home) {
-    this.home = home;
-    return this;
-  }
-
-  public String getMobile() { return mobile; }
 
   public ContactData withMobile(String mobile) {
     this.mobile = mobile;
     return this;
   }
 
-  public String getWorkPhone() { return work; }
+  public ContactData withHomePhone(String home) {
+    this.home = home;
+    return this;
+  }
 
   public ContactData withWorkPhone(String work) {
     this.work = work;
     return this;
   }
 
-  public String getEmail() { return email; }
-
   public ContactData withEmail(String email) {
     this.email = email;
     return this;
   }
 
-  public String getGroup() { return group; }
-
   public ContactData withGroup(String group) {
     this.group = group;
     return this;
   }
+
+  public int getId() {
+    return id;
+  }
+
+  public String getLastname() {
+    return lastname;
+  }
+
+  public String getNickname() {
+    return nickname;
+  }
+
+  public String getMobile() {
+    return mobile;
+  }
+
+  public String getHomePhone() { return home; }
+
+  public String getWorkPhone() { return work; }
+
+  public String getEmail() { return email; }
+
+  public String getGroup() { return group; }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
@@ -111,5 +119,6 @@ public class ContactData {
             ", work='" + work + '\'' +
             '}';
   }
+
 }
 
