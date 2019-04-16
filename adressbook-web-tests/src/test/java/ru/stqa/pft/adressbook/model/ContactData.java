@@ -3,13 +3,22 @@ package ru.stqa.pft.adressbook.model;
 import java.util.Objects;
 
 public class ContactData {
-  private int id = Integer.MAX_VALUE;;
+  private int id = Integer.MAX_VALUE;
   private String firstname;
   private String lastname;
   private String nickname;
   private String mobile;
   private String email;
+  private String email2;
+  private String email3;
   private String group;
+  private String home;
+  private String work;
+  private String address;
+
+  public ContactData() {
+  }
+
 
   public String getFirstname() {
     return firstname;
@@ -34,6 +43,22 @@ public class ContactData {
     return this;
   }
 
+  public ContactData withAddress(String address) {
+    this.address = address;
+    return this;
+  }
+
+
+  public ContactData withHomePhone(String home) {
+    this.home = home;
+    return this;
+  }
+
+  public ContactData withWorkPhone(String work) {
+    this.work = work;
+    return this;
+  }
+
   public ContactData withMobile(String mobile) {
     this.mobile = mobile;
     return this;
@@ -41,6 +66,15 @@ public class ContactData {
 
   public ContactData withEmail(String email) {
     this.email = email;
+    return this;
+  }
+
+  public ContactData withEmail1(String email2) {
+    this.email2 = email2;
+    return this;
+  }
+  public ContactData withEmail2(String email3) {
+    this.email3 = email3;
     return this;
   }
 
@@ -56,25 +90,39 @@ public class ContactData {
     return nickname;
   }
 
+  public String getAddress() {
+    return address;
+  }
+
   public String getMobile() {
     return mobile;
   }
 
+  public String getHomePhone() {
+    return home;
+  }
+
+  public String getWorkPhone() {
+    return work;
+  }
+
   public String getEmail() {
     return email;
+  }
+  public String getEmail2() {
+    return email2;
+  }
+  public String getEmail3() {
+    return email3;
   }
 
   public String getGroup() {
     return group;
   }
 
-  @Override
-  public String toString() {
-    return "ContactData{" +
-            "id=" + id +
-            ", firstname='" + firstname + '\'' +
-            ", lastname='" + lastname + '\'' +
-            '}';
+  public ContactData withGroup(String group) {
+    this.group = group;
+    return this;
   }
 
   @Override
@@ -84,17 +132,35 @@ public class ContactData {
     ContactData that = (ContactData) o;
     return id == that.id &&
             Objects.equals(firstname, that.firstname) &&
-            Objects.equals(lastname, that.lastname);
+            Objects.equals(lastname, that.lastname) &&
+            Objects.equals(mobile, that.mobile) &&
+            Objects.equals(email, that.email) &&
+            Objects.equals(email2, that.email2) &&
+            Objects.equals(email3, that.email3) &&
+            Objects.equals(home, that.home) &&
+            Objects.equals(work, that.work) &&
+            Objects.equals(address, that.address);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, firstname, lastname);
+    return Objects.hash(id, firstname, lastname, mobile, email, email2, email3, home, work, address);
   }
 
-  public ContactData withGroup(String group) {
-    this.group = group;
-    return this;
+  @Override
+  public String toString() {
+    return "ContactData{" +
+            "id=" + id +
+            ", firstname='" + firstname + '\'' +
+            ", lastname='" + lastname + '\'' +
+            ", mobile='" + mobile + '\'' +
+            ", email='" + email + '\'' +
+            ", email2='" + email2 + '\'' +
+            ", email3='" + email3 + '\'' +
+            ", home='" + home + '\'' +
+            ", work='" + work + '\'' +
+            ", address='" + address + '\'' +
+            '}';
   }
 
 }
