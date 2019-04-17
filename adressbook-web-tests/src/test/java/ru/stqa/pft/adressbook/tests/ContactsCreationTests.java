@@ -22,6 +22,7 @@ public class ContactsCreationTests extends TestBase {
     assertThat(after, equalTo(
             before.withAdded(contact.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt()))));
   }
+
   @Test
   public void testBadContactsCreation() throws Exception {
     Contacts before = app.contact().all();

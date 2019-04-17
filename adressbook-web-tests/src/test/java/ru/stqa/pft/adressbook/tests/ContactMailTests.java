@@ -30,9 +30,9 @@ public class ContactMailTests extends TestBase {
   public void testContactMail() {
     app.goTo().HomePage(); //переход на главную страницу
     ContactData contact = app.contact().all().iterator().next(); // загрузка списка множества контактов, выбор контакта случайным образом
-    ContactData contactInfoFromEditFrom = app.contact().infoFromEditForm(contact);
+    ContactData contactInfoFromEditForm = app.contact().infoFromEditForm(contact);
 
-    assertThat(contact.getAllEmails(), equalTo(mergeEmails(contactInfoFromEditFrom))); }
+    assertThat(contact.getAllEmails(), equalTo(mergeEmails(contactInfoFromEditForm))); }
 
   private String mergeEmails(ContactData contact) {
     return Arrays.asList(contact.getEmail(), contact.getEmail2(), contact.getEmail3())

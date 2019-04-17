@@ -18,6 +18,16 @@ public class ContactData {
   private String allPhones;
   private String allEmails;
 
+
+  public int getId() {
+    return id;
+  }
+
+  public ContactData withId(int id) {
+    this.id = id;
+    return this;
+  }
+
   public String getAllEmails() {
     return allEmails;
   }
@@ -27,14 +37,6 @@ public class ContactData {
     return this;
   }
 
-
-
-  public ContactData() {
-  }
-  public ContactData withId(int id) {
-    this.id = id;
-    return this;
-  }
 
   public String getAllPhones() {
     return allPhones;
@@ -54,9 +56,17 @@ public class ContactData {
     return this;
   }
 
+  public String getLastname() {
+    return lastname;
+  }
+
   public ContactData withLastname(String lastname) {
     this.lastname = lastname;
     return this;
+  }
+
+  public String getNickname() {
+    return nickname;
   }
 
   public ContactData withNickname(String nickname) {
@@ -64,15 +74,26 @@ public class ContactData {
     return this;
   }
 
+  public String getAddress() {
+    return address;
+  }
+
   public ContactData withAddress(String address) {
     this.address = address;
     return this;
   }
 
+  public String getHomePhone() {
+    return home;
+  }
 
   public ContactData withHomePhone(String home) {
     this.home = home;
     return this;
+  }
+
+  public String getWorkPhone() {
+    return work;
   }
 
   public ContactData withWorkPhone(String work) {
@@ -80,9 +101,18 @@ public class ContactData {
     return this;
   }
 
+  public String getMobile() {
+    return mobile;
+  }
+
+
   public ContactData withMobile(String mobile) {
     this.mobile = mobile;
     return this;
+  }
+
+  public String getEmail() {
+    return email;
   }
 
   public ContactData withEmail(String email) {
@@ -90,51 +120,22 @@ public class ContactData {
     return this;
   }
 
+  public String getEmail2() {
+    return email2;
+  }
+
   public ContactData withEmail2(String email2) {
     this.email2 = email2;
     return this;
   }
+
+  public String getEmail3() {
+    return email3;
+  }
+
   public ContactData withEmail3(String email3) {
     this.email3 = email3;
     return this;
-  }
-
-  public int getId() {
-    return id;
-  }
-
-  public String getLastname() {
-    return lastname;
-  }
-
-  public String getNickname() {
-    return nickname;
-  }
-
-  public String getAddress() {
-    return address;
-  }
-
-  public String getMobile() {
-    return mobile;
-  }
-
-  public String getHomePhone() {
-    return home;
-  }
-
-  public String getWorkPhone() {
-    return work;
-  }
-
-  public String getEmail() {
-    return email;
-  }
-  public String getEmail2() {
-    return email2;
-  }
-  public String getEmail3() {
-    return email3;
   }
 
   public String getGroup() {
@@ -147,41 +148,27 @@ public class ContactData {
   }
 
   @Override
+  public String toString() {
+    return "ContactData{" +
+            "id=" + id +
+            ", firstname='" + firstname + '\'' +
+            ", lastname='" + lastname + '\'' +
+            '}';
+  }
+
+  @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     ContactData that = (ContactData) o;
     return id == that.id &&
             Objects.equals(firstname, that.firstname) &&
-            Objects.equals(lastname, that.lastname) &&
-            Objects.equals(mobile, that.mobile) &&
-            Objects.equals(email, that.email) &&
-            Objects.equals(email2, that.email2) &&
-            Objects.equals(email3, that.email3) &&
-            Objects.equals(home, that.home) &&
-            Objects.equals(work, that.work) &&
-            Objects.equals(address, that.address);
+            Objects.equals(lastname, that.lastname);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, firstname, lastname, mobile, email, email2, email3, home, work, address);
-  }
-
-  @Override
-  public String toString() {
-    return "ContactData{" +
-            "id=" + id +
-            ", firstname='" + firstname + '\'' +
-            ", lastname='" + lastname + '\'' +
-            ", mobile='" + mobile + '\'' +
-            ", email='" + email + '\'' +
-            ", email2='" + email2 + '\'' +
-            ", email3='" + email3 + '\'' +
-            ", home='" + home + '\'' +
-            ", work='" + work + '\'' +
-            ", address='" + address + '\'' +
-            '}';
+    return Objects.hash(id, firstname, lastname);
   }
 
 }
