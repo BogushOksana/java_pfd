@@ -1,0 +1,38 @@
+[
+  {
+    "firstname": "Иван 0",
+    "lastname": "Иванов 0",
+    "mobile": "123456789 0",
+    "email": "ivanov@mail 0",
+    "email2": "ivanov2@mail 0",
+    "email3": "ivanov3@mail 0",
+    "group": "test 0",
+    "home": "111 0",
+    "work": "333 0",
+    "address": "Пермь 0"
+  },
+  {
+    "firstname": "Иван 1",
+    "lastname": "Иванов 1",
+    "mobile": "123456789 1",
+    "email": "ivanov@mail 1",
+    "email2": "ivanov2@mail 1",
+    "email3": "ivanov3@mail 1",
+    "group": "test 1",
+    "home": "111 1",
+    "work": "333 1",
+    "address": "Пермь 1"
+  },
+  {
+    "firstname": "Иван 2",
+    "lastname": "Иванов 2",
+    "mobile": "123456789 2",
+    "email": "ivanov@mail 2",
+    "email2": "ivanov2@mail 2",
+    "email3": "ivanov3@mail 2",
+    "group": "test 2",
+    "home": "111 2",
+    "work": "333 2",
+    "address": "Пермь 2"
+  }
+]
