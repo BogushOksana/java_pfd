@@ -1,0 +1,38 @@
+<list>
+  <contacts>
+    <firstname>Иван 0</firstname>
+    <lastname>Иванов 0</lastname>
+    <mobile>123456789 0</mobile>
+    <email>ivanov@mail 0</email>
+    <email2>ivanov2@mail 0</email2>
+    <email3>ivanov3@mail 0</email3>
+    <group>test 0</group>
+    <home>111 0</home>
+    <work>333 0</work>
+    <address>Пермь 0</address>
+  </contacts>
+  <contacts>
+    <firstname>Иван 1</firstname>
+    <lastname>Иванов 1</lastname>
+    <mobile>123456789 1</mobile>
+    <email>ivanov@mail 1</email>
+    <email2>ivanov2@mail 1</email2>
+    <email3>ivanov3@mail 1</email3>
+    <group>test 1</group>
+    <home>111 1</home>
+    <work>333 1</work>
+    <address>Пермь 1</address>
+  </contacts>
+  <contacts>
+    <firstname>Иван 2</firstname>
+    <lastname>Иванов 2</lastname>
+    <mobile>123456789 2</mobile>
+    <email>ivanov@mail 2</email>
+    <email2>ivanov2@mail 2</email2>
+    <email3>ivanov3@mail 2</email3>
+    <group>test 2</group>
+    <home>111 2</home>
+    <work>333 2</work>
+    <address>Пермь 2</address>
+  </contacts>
+</list>
