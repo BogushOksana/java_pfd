@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.adressbook.tests.ContactsCreationTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2019-04-23T17:44:15" hostname="Oksynya" time="103.314">
+  <properties/>
+  <testcase name="testBadContactsCreation" classname="ru.stqa.pft.adressbook.tests.ContactsCreationTests" time="18.305"/>
+  <testcase name="testContactsCreation[0](ContactData{id=2147483647, firstname='Р�РІР°РЅ 0', lastname='Р�РІР°РЅРѕРІ 0'})" classname="ru.stqa.pft.adressbook.tests.ContactsCreationTests" time="22.11"/>
+  <testcase name="testContactsCreation[1](ContactData{id=2147483647, firstname='Р�РІР°РЅ 1', lastname='Р�РІР°РЅРѕРІ 1'})" classname="ru.stqa.pft.adressbook.tests.ContactsCreationTests" time="22.221"/>
+  <testcase name="testContactsCreation[2](ContactData{id=2147483647, firstname='Р�РІР°РЅ 2', lastname='Р�РІР°РЅРѕРІ 2'})" classname="ru.stqa.pft.adressbook.tests.ContactsCreationTests" time="22.926"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72) on port 47451
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+апр 23, 2019 10:44:14 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+Starting ChromeDriver 73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72) on port 1084
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+апр 23, 2019 10:44:38 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+Starting ChromeDriver 73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72) on port 40072
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+апр 23, 2019 10:45:07 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+Starting ChromeDriver 73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72) on port 6434
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+апр 23, 2019 10:45:34 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+]]></system-err>
+</testsuite>

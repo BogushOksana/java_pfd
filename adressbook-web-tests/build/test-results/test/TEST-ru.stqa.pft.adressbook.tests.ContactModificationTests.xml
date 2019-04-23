@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.adressbook.tests.ContactModificationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-04-23T17:30:30" hostname="Oksynya" time="11.769">
+  <properties/>
+  <testcase name="testContactModification" classname="ru.stqa.pft.adressbook.tests.ContactModificationTests" time="11.769"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72) on port 25888
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+апр 23, 2019 10:30:22 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+]]></system-err>
+</testsuite>
