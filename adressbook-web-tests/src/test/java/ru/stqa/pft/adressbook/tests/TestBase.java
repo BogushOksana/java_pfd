@@ -7,7 +7,7 @@ import ru.stqa.pft.adressbook.appmanager.ApplicationManager;
 
 public class TestBase {
 
-  protected final ApplicationManager app = new ApplicationManager(BrowserType.CHROME);
+  protected final ApplicationManager app = new ApplicationManager(BrowserType.FIREFOX);
 
 
 
@@ -19,7 +19,5 @@ public class TestBase {
   @AfterMethod(alwaysRun = true)
   public void tearDown() throws Exception {
     app.stop();
-
   }
-
 }
