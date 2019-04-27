@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.adressbook.tests.ContactModificationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-04-23T17:46:13" hostname="Oksynya" time="11.947">
+<testsuite name="ru.stqa.pft.adressbook.tests.ContactModificationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-04-27T10:13:44" hostname="Oksynya" time="14.544">
   <properties/>
-  <testcase name="testContactModification" classname="ru.stqa.pft.adressbook.tests.ContactModificationTests" time="11.947"/>
+  <testcase name="testContactModification" classname="ru.stqa.pft.adressbook.tests.ContactModificationTests" time="14.544"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[Starting ChromeDriver 73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72) on port 46327
+  <system-err><![CDATA[Starting ChromeDriver 74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}) on port 27596
 Only local connections are allowed.
 Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
-апр 23, 2019 10:46:02 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+апр 27, 2019 3:13:30 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: OSS
 ]]></system-err>
 </testsuite>
