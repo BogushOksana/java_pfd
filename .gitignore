@@ -65,3 +65,4 @@ adressbook-web-tests/src/test/java/ru/stqa/pft/adressbook/appmanager/GroupHelper
 adressbook-web-tests/out/test/classes/ru/stqa/pft/adressbook/appmanager/ContactHelper.class
 adressbook-web-tests/out/test/classes/ru/stqa/pft/adressbook/appmanager/ContactHelper.class
 adressbook-web-tests/out/test/classes/ru/stqa/pft/adressbook/appmanager/GroupHelper.class
+*.log
