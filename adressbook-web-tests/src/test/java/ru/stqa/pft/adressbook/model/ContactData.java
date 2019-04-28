@@ -221,27 +221,35 @@ public class ContactData {
   }
 
   @Override
-  public String toString() {
-    return "ContactData{" +
-            "id=" + id +
-            ", firstname='" + firstname + '\'' +
-            ", lastname='" + lastname + '\'' +
-            '}';
-  }
-
-  @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     ContactData that = (ContactData) o;
     return id == that.id &&
             Objects.equals(firstname, that.firstname) &&
-            Objects.equals(lastname, that.lastname);
+            Objects.equals(lastname, that.lastname) &&
+            Objects.equals(nickname, that.nickname) &&
+            Objects.equals(mobile, that.mobile) &&
+            Objects.equals(home, that.home) &&
+            Objects.equals(work, that.work) &&
+            Objects.equals(email, that.email) &&
+            Objects.equals(email2, that.email2) &&
+            Objects.equals(email3, that.email3) &&
+            Objects.equals(address, that.address);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, firstname, lastname);
+    return Objects.hash(id, firstname, lastname, nickname, mobile, home, work, email, email2, email3, address);
+  }
+
+  @Override
+  public String toString() {
+    return "ContactData{" +
+            "id=" + id +
+            ", firstname='" + firstname + '\'' +
+            ", lastname='" + lastname + '\'' +
+            '}';
   }
 
 }
