@@ -5,6 +5,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.pft.adressbook.model.ContactData;
 
+import java.io.File;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
@@ -16,12 +17,13 @@ public class ContactMailTests extends TestBase {
   @BeforeMethod
   public void ensurePreconditions() {
     app.goTo().HomePage();
-    if (app.contact().all().size() == 0) {
-      app.goTo().ContactPage();
-      app.contact().create(new ContactData()
+    app.goTo().ContactPage();
+    if (app.db().contacts().size() == 0) {
+        app.contact().create(new ContactData()
               .withFirstname("Иван").withLastname("Иванов").withNickname("Ваня")
               .withAddress("Пермь")
               .withHomePhone("111").withMobile("123456789").withWorkPhone("333")
+              .withPhoto(new File("src/test/resources/123.png"))
               .withEmail("ivanov@mail").withEmail2("ivanov12@mail").withEmail3("ivanov3@mail").withGroup("test1"));
     }
   }
@@ -29,7 +31,7 @@ public class ContactMailTests extends TestBase {
   @Test
   public void testContactMail() {
     app.goTo().HomePage(); //переход на главную страницу
-    ContactData contact = app.contact().all().iterator().next(); // загрузка списка множества контактов, выбор контакта случайным образом
+    ContactData contact = app.db().contacts().iterator().next(); // загрузка списка множества контактов, выбор контакта случайным образом
     ContactData contactInfoFromEditForm = app.contact().infoFromEditForm(contact);
 
     assertThat(contact.getAllEmails(), equalTo(mergeEmails(contactInfoFromEditForm))); }
