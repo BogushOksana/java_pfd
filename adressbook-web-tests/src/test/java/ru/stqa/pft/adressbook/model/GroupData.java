@@ -31,6 +31,16 @@ public class GroupData {
     private String footer;
 
 
+    @Expose
+    @Column(name = "group_name")
+    private String name;
+
+    @ManyToMany(mappedBy = "groups") //означает, что в парном классе ContactData нужно найти свойство Groups и оттуда взять описание того, как организована в БД связь м/у двумя объектами
+    private Set<ContactData> contacts = new HashSet<ContactData>();
+
+    public Contacts getContacts() {
+        return new Contacts(contacts);
+    }
 
     public GroupData withId(int id) {
         this.id = id;
@@ -64,18 +74,6 @@ public class GroupData {
 
     public String getFooter() {
         return footer;
-    }
-
-
-    @Expose
-    @Column(name = "group_name")
-    private String name;
-
-    @ManyToMany(mappedBy = "groups") //означает, что в парном классе ContactData нужно найти свойство Groups и оттуда взять описание того, как организована в БД связь м/у двумя объектами
-    private Set<ContactData> contacts = new HashSet<ContactData>();
-
-    public Set<ContactData> getContacts() {
-        return new Contacts(contacts);
     }
 
     @Override
