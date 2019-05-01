@@ -31,7 +31,7 @@ public class ContactModificationTests extends TestBase {
             .withId(modifiedContact.getId()) .withFirstname("Иван").withLastname("Иванов").withNickname("Ваня")
             .withAddress("Пермь")
             .withHomePhone("111").withMobile("123456789").withWorkPhone("333")
-            .withPhoto(new File("src/test/resources/123.png"))
+      //      .withPhoto(new File("src/test/resources/123.png"))
             .withEmail("ivanov@mail").withEmail2("ivanov12@mail").withEmail3("ivanov3@mail").withGroup("test1");
     app.contact().modify(contact);
     assertThat(app.contact().getContactCount(), equalTo(before.size()));

@@ -20,11 +20,11 @@ public class ContactMailTests extends TestBase {
     app.goTo().ContactPage();
     if (app.db().contacts().size() == 0) {
         app.contact().create(new ContactData()
-              .withFirstname("Иван").withLastname("Иванов").withNickname("Ваня")
-              .withAddress("Пермь")
-              .withHomePhone("111").withMobile("123456789").withWorkPhone("333")
-              .withPhoto(new File("src/test/resources/123.png"))
-              .withEmail("ivanov@mail").withEmail2("ivanov12@mail").withEmail3("ivanov3@mail").withGroup("test1"));
+                .withFirstname("Иван").withLastname("Иванов").withNickname("Ваня")
+                .withAddress("Пермь")
+                .withHomePhone("111").withMobile("123456789").withWorkPhone("333")
+                // .withPhoto(new File("src/test/resources/123.png"))
+                .withEmail("ivanov@mail").withEmail2("ivanov12@mail").withEmail3("ivanov3@mail").withGroup("test1"));
     }
   }
 
@@ -44,5 +44,6 @@ public class ContactMailTests extends TestBase {
 
   public static String cleaned(String email) {
     return email.replaceAll("\\s", "").replaceAll("[-()]", "");
+
   }
 }

@@ -1,7 +1,5 @@
 package ru.stqa.pft.adressbook.tests;
 
-import org.hamcrest.CoreMatchers;
-import org.hamcrest.MatcherAssert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.pft.adressbook.model.ContactData;
@@ -24,7 +22,7 @@ public class ContactPhoneTests extends TestBase {
               .withFirstname("Иван").withLastname("Иванов").withNickname("Ваня")
               .withAddress("Пермь")
               .withHomePhone("111").withMobile("123456789").withWorkPhone("333")
-              .withPhoto(new File("src/test/resources/123.png"))
+           //   .withPhoto(new File("src/test/resources/123.png"))
               .withEmail("ivanov@mail").withEmail2("ivanov12@mail").withEmail3("ivanov3@mail").withGroup("test1"));}
   }
 
@@ -33,11 +31,11 @@ public class ContactPhoneTests extends TestBase {
     app.goTo().HomePage(); //переход на главную страницу
     ContactData contact = app.db().contacts().iterator().next(); // загрузка списка множества контактов, выбор контакта случайным образом
     ContactData contactInfoFromEditForm = app.contact().infoFromEditForm(contact);
-
     assertThat(contact.getAllPhones(), equalTo(mergePhones(contactInfoFromEditForm)));
-    assertThat(contact.getAddress(), equalTo(contactInfoFromEditForm.getAddress()));}
+    assertThat(contact.getAddress(), equalTo(contactInfoFromEditForm.getAddress()));
+    }
 
-  private String mergePhones(ContactData contact) {
+  public String mergePhones(ContactData contact) {
     return Arrays.asList(contact.getHomePhone(), contact.getMobile(), contact.getWorkPhone())
             .stream().filter((s) -> ! s.equals(""))
             .map(ContactPhoneTests::cleaned)
