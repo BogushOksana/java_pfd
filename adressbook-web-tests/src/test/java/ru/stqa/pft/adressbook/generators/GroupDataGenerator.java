@@ -77,7 +77,7 @@ public class GroupDataGenerator { //подключили библиотеку jc
     System.out.println(new File(".").getAbsolutePath());
     try (Writer writer = new FileWriter(file)) {
       for (GroupData group : groups) { // проходимся в цикле по всем группам
-        writer.write(String.format("%s;%s;%s\n", group.getName(), group.getHeader(), group.getFooter())); // каждый записываем
+        writer.write(String.format("%s;%s;%s\r\n", group.getName(), group.getHeader(), group.getFooter())); // каждый записываем
       }
     }
   }
@@ -86,7 +86,7 @@ public class GroupDataGenerator { //подключили библиотеку jc
     List<GroupData> groups = new ArrayList<GroupData>();
     for (int i = 0; i < count; i++) {
       groups.add(new GroupData().withName(String.format("test %s", i))
-              .withHeader(String.format("header\n %s", i)).withFooter(String.format("footer\n %s", i))); // нумерованные группы
+              .withHeader(String.format("header\r\n %s", i)).withFooter(String.format("footer\r\n %s", i))); // нумерованные группы
     }
     return groups;
   }

@@ -1,11 +1,9 @@
 package ru.stqa.pft.adressbook.tests;
 
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.pft.adressbook.model.ContactData;
 
-import java.io.File;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
@@ -17,9 +15,9 @@ public class ContactMailTests extends TestBase {
   @BeforeMethod
   public void ensurePreconditions() {
     app.goTo().HomePage();
-    app.goTo().ContactPage();
-    if (app.db().contacts().size() == 0) {
-        app.contact().create(new ContactData()
+    if (app.contact().all().size() == 0) {
+      app.goTo().ContactPage();
+      app.contact().create(new ContactData()
                 .withFirstname("Иван").withLastname("Иванов").withNickname("Ваня")
                 .withAddress("Пермь")
                 .withHomePhone("111").withMobile("123456789").withWorkPhone("333")
@@ -31,7 +29,7 @@ public class ContactMailTests extends TestBase {
   @Test
   public void testContactMail() {
     app.goTo().HomePage(); //переход на главную страницу
-    ContactData contact = app.db().contacts().iterator().next(); // загрузка списка множества контактов, выбор контакта случайным образом
+    ContactData contact = app.contact().all().iterator().next(); // загрузка списка множества контактов, выбор контакта случайным образом
     ContactData contactInfoFromEditForm = app.contact().infoFromEditForm(contact);
 
     assertThat(contact.getAllEmails(), equalTo(mergeEmails(contactInfoFromEditForm))); }
