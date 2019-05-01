@@ -1,6 +1,5 @@
 package ru.stqa.pft.adressbook.tests;
 
-
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.thoughtworks.xstream.XStream;
@@ -16,7 +15,6 @@ import java.util.stream.Collectors;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
-
 
 public class GroupCreationTests extends TestBase {
 
@@ -60,7 +58,7 @@ public class GroupCreationTests extends TestBase {
     Groups after = app.db().groups();
     assertThat(after, equalTo(
             before.withAdded(group.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt()))));
-
+    verifyGroupListInUI();
   }
 
   @Test (enabled = false)
