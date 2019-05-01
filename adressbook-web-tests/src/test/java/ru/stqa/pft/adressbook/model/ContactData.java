@@ -7,7 +7,10 @@ import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.io.File;
+import java.security.acl.Group;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @XStreamAlias("contacts")
 @Entity
@@ -62,10 +65,6 @@ public class ContactData {
     private String email3;
 
     @Expose
-    @Transient
-    private String group;
-
-    @Expose
     @Column(name = "address")
     @Type(type = "text")
     private String address;
@@ -82,6 +81,15 @@ public class ContactData {
     @Column(name = "photo")
     @Type(type = "text")
     private String photo;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "address_in_groups",
+            joinColumns = @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "group_id"))
+    private Set<GroupData> groups = new HashSet<GroupData>(); // удалили private String group, создали private Set<GroupData>, т.к. контакт ассоциироан не с одной группой, а с несколькими
+
+    public Groups getGroups() { //для нового созданного атрибута Groups
+        return new Groups(groups);
+    }
 
     public File getPhoto() {
         return new File(photo);
@@ -207,15 +215,6 @@ public class ContactData {
 
     public ContactData withEmail3(String email3) {
         this.email3 = email3;
-        return this;
-    }
-
-    public String getGroup() {
-        return group;
-    }
-
-    public ContactData withGroup(String group) {
-        this.group = group;
         return this;
     }
 

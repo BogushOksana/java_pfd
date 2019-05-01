@@ -5,11 +5,10 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
 import org.hibernate.annotations.Type;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @XStreamAlias("groups")
 @Entity
@@ -71,6 +70,13 @@ public class GroupData {
     @Expose
     @Column(name = "group_name")
     private String name;
+
+    @ManyToMany(mappedBy = "groups") //означает, что в парном классе ContactData нужно найти свойство Groups и оттуда взять описание того, как организована в БД связь м/у двумя объектами
+    private Set<ContactData> contacts = new HashSet<ContactData>();
+
+    public Set<ContactData> getContacts() {
+        return new Contacts(contacts);
+    }
 
     @Override
     public String toString() {

@@ -70,7 +70,7 @@ public class ContactsCreationTests extends TestBase {
             .withFirstname("Иван").withLastname("Иванов").withNickname("Ваня")
             .withAddress("Пермь")
             .withHomePhone("111").withMobile("123456789").withWorkPhone("333")
-            .withEmail("ivanov@mail").withEmail2("ivanov12@mail").withEmail3("ivanov3@mail").withGroup("test1");
+            .withEmail("ivanov@mail").withEmail2("ivanov12@mail").withEmail3("ivanov3@mail"); //.withGroup("test1");
     app.contact().create(contact);
     assertThat(app.contact().getContactCount(), equalTo(before.size()));
     Contacts after = app.contact().all();

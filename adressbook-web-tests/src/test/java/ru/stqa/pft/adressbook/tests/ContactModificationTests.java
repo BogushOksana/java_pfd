@@ -16,7 +16,7 @@ public class ContactModificationTests extends TestBase {
     if(app.db().contacts().size()==0) {
       app.goTo().ContactPage();
       app.contact().create(new ContactData()
-              .withFirstname("Иван").withLastname("Иванов").withNickname("Ваня").withMobile("123456789").withEmail("ivanov@mail").withGroup("test1"));
+              .withFirstname("Иван").withLastname("Иванов").withNickname("Ваня").withMobile("123456789").withEmail("ivanov@mail")); //.withGroup("test1"));
     }
   }
 
@@ -29,7 +29,7 @@ public class ContactModificationTests extends TestBase {
             .withAddress("Пермь")
             .withHomePhone("111").withMobile("123456789").withWorkPhone("333")
       //      .withPhoto(new File("src/test/resources/123.png"))
-            .withEmail("ivanov@mail").withEmail2("ivanov12@mail").withEmail3("ivanov3@mail").withGroup("test1");
+            .withEmail("ivanov@mail").withEmail2("ivanov12@mail").withEmail3("ivanov3@mail");//.withGroup("test1");
     app.contact().modify(contact);
     assertThat(app.contact().getContactCount(), equalTo(before.size()));
     Contacts after = app.db().contacts();
