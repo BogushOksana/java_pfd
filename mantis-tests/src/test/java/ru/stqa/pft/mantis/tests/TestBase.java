@@ -6,7 +6,6 @@ import org.testng.annotations.BeforeSuite;
 import ru.stqa.pft.mantis.appmanager.ApplicationManager;
 
 import java.io.File;
-import java.io.IOException;
 
 
 public class TestBase {
@@ -23,7 +22,7 @@ public class TestBase {
   }
 
   @AfterSuite(alwaysRun = true)
-  public void tearDown() throws IOException {
+  public void tearDown() throws Exception {
     app.ftp().restore("config_inc.php.bak", "config_inc.php");
     app.stop();
       }
